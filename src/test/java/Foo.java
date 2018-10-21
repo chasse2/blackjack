@@ -25,7 +25,6 @@ public class Foo {
 
         final PlayerActionAnalyzerResult result = analyzer.analyze(practiceHand, actualAction);
 
-        // todo: Add toString()'s for each class ...
         System.out.printf("For hand " + practiceHand.toString() + ", result is: " + result.toString());
     }
 
