@@ -22,4 +22,11 @@ public class PracticeHand {
         this.playerCard2 = playerCard2;
         this.dealerCard = dealerCard;
     }
+
+    @Override
+    public String toString() {
+        return "(PlayerCard1:" + this.playerCard1
+                + ";PlayerCard2:" + this.playerCard2
+                + ";DealerCard:" + dealerCard + ")";
+    }
 }

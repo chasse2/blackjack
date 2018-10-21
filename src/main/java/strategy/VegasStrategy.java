@@ -12,8 +12,10 @@ public class VegasStrategy implements Strategy {
 
     static {
         strategyMap.put(new HandSpec(CardValue.ONE, CardValue.ONE, CardValue.ONE),
-                new StrategyResult(PlayerAction.SPLIT, "todoDescription"));
+                new StrategyResult(PlayerAction.SPLIT, "todoDescription for Ace, Ace, Ace"));
         //todo - fill this in ...
+        strategyMap.put(new HandSpec(CardValue.TWO, CardValue.TWO, CardValue.SIX),
+                new StrategyResult(PlayerAction.SPLIT, "todoDescription for 2, 2, 6"));
     }
 
     @Override

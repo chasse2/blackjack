@@ -14,4 +14,11 @@ public class PlayerActionAnalyzerResult {
         this.actualAction = actualAction;
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "(ExpectedAction:" + this.expectedAction
+                + ";ActualAction:" + this.actualAction
+                + ";Description:" + this.description + ")";
+    }
 }

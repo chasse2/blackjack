@@ -26,4 +26,18 @@ public class HandSpec {
     public final boolean hasPlayerPair() {
         return this.playerCardValue1 == this.playerCardValue2;
     }
+
+    @Override
+    public int hashCode() {
+//        return super.hashCode();
+        return 1; // todo: implement
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        final HandSpec other = HandSpec.class.cast(obj);
+        return this.playerCardValue1 == other.playerCardValue1
+                && this.playerCardValue2 == other.playerCardValue2
+                && this.dealerCardValue == other.dealerCardValue;
+    }
 }

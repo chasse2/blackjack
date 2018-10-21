@@ -8,4 +8,9 @@ public class Card {
         this.suit = suit;
         this.rank = rank;
     }
+
+    @Override
+    public String toString() {
+        return "(Suit:" + this.suit + ";Rank:" + this.rank + ")";
+    }
 }
