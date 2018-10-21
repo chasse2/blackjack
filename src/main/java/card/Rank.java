@@ -16,6 +16,7 @@ public enum Rank {
     KING(CardValue.TEN);
 
     public final CardValue cardValue;
+
     public final int value() {
         return this.cardValue.value;
     }

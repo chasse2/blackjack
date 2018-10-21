@@ -11,8 +11,8 @@ public class StandardPracticeHandGenerator implements PracticeHandGenerator {
 
     private final Set<HandSpec> specs = new LinkedHashSet<>();
     private final Set<HandSpec> specsWithDealerAce = new LinkedHashSet<>();
-    private final Set<HandSpec> specsWithPlayerPair = new LinkedHashSet<>();
     private final Set<HandSpec> specsWithPlayerAce = new LinkedHashSet<>();
+    private final Set<HandSpec> specsWithPlayerPair = new LinkedHashSet<>();
 
     volatile private Iterator<HandSpec> specIterator;
     volatile private Iterator<HandSpec> specsWithDealAceIterator;
