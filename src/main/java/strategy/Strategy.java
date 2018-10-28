@@ -1,6 +1,5 @@
 package strategy;
 
-import action.PlayerAction;
 import spec.HandSpec;
 
 public interface Strategy {

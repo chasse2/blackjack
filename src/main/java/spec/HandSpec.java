@@ -16,11 +16,11 @@ public class HandSpec {
     }
 
     public final boolean hasDealerAce() {
-        return this.dealerCardValue == CardValue.ONE;
+        return this.dealerCardValue == CardValue.ACE;
     }
 
     public final boolean hasPlayerAce() {
-        return this.playerCardValue1 == CardValue.ONE || this.playerCardValue2 == CardValue.ONE;
+        return this.playerCardValue1 == CardValue.ACE || this.playerCardValue2 == CardValue.ACE;
     }
 
     public final boolean hasPlayerPair() {
@@ -29,8 +29,10 @@ public class HandSpec {
 
     @Override
     public int hashCode() {
-//        return super.hashCode();
-        return 1; // todo: implement
+        //todo - does this make sense?
+        return playerCardValue1.value
+                + (10 + playerCardValue2.value)
+                + (100 + dealerCardValue.value);
     }
 
     @Override

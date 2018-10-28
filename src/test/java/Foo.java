@@ -1,4 +1,7 @@
 import action.PlayerAction;
+import analyze.PlayerActionAnalyzer;
+import analyze.PlayerActionAnalyzerResult;
+import card.CardDecorator;
 import card.CardValue;
 import org.junit.Test;
 import practice.*;
@@ -7,13 +10,15 @@ import strategy.VegasStrategy;
 
 import java.util.*;
 
+import static org.mockito.Mockito.mock;
+
 public class Foo {
 
     final PlayerActionAnalyzer analyzer = new PlayerActionAnalyzer(new VegasStrategy());
 
     @Test
     public final void test() {
-        final HandSpec handSpec1 = new HandSpec(CardValue.ONE, CardValue.ONE, CardValue.ONE);
+        final HandSpec handSpec1 = new HandSpec(CardValue.ACE, CardValue.ACE, CardValue.ACE);
         final HandSpec handSpec2 = new HandSpec(CardValue.TWO, CardValue.TWO, CardValue.SIX);
 
         final Set<HandSpec> handSpecs = new LinkedHashSet<>(Arrays.asList(handSpec1, handSpec2));
@@ -28,4 +33,8 @@ public class Foo {
         System.out.printf("For hand " + practiceHand.toString() + ", result is: " + result.toString());
     }
 
+    @Test
+    public final void testMockito() {
+        CardDecorator cardDecorator = mock(CardDecorator.class);
+    }
 }

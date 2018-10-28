@@ -1,23 +1,19 @@
 package practice;
 
 import card.Card;
-import card.CardValue;
-import card.Rank;
-import generate.RandomRank10Generator;
-import generate.RandomSuitGenerator;
+import card.CardDecorator;
 import spec.HandSpec;
 
 import java.util.Random;
 
 public class PracticeHandDecorator {
-    private final RandomSuitGenerator randomSuitGenerator = new RandomSuitGenerator();
-    private final RandomRank10Generator randomRank10Generator = new RandomRank10Generator();
+    private final CardDecorator decorator = new CardDecorator();
     private final Random randomSwapPlayerHands = new Random();
 
     public final PracticeHand decorate(final HandSpec handSpec) {
-        final Card playerCard1 = generateCard(handSpec.playerCardValue1);
-        final Card playerCard2 = generateCard(handSpec.playerCardValue2);
-        final Card dealerCard = generateCard(handSpec.dealerCardValue);
+        final Card playerCard1 = decorator.decorate(handSpec.playerCardValue1);
+        final Card playerCard2 = decorator.decorate(handSpec.playerCardValue2);
+        final Card dealerCard = decorator.decorate(handSpec.dealerCardValue);
 
         final PracticeHand practiceHand;
 
@@ -28,21 +24,5 @@ public class PracticeHandDecorator {
         }
 
         return practiceHand;
-    }
-
-    private Card generateCard(final CardValue cardValue) {
-        return new Card(randomSuitGenerator.generate(), generateRank(cardValue));
-    }
-
-    private Rank generateRank(final CardValue cardValue) {
-        final Rank rank;
-
-        if (cardValue.value < 10) {
-            rank = Rank.values()[cardValue.value - 1];
-        } else {
-            rank = randomRank10Generator.generate();
-        }
-
-        return rank;
     }
 }

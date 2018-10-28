@@ -1,16 +1,20 @@
 package card;
 
-public class Card {
-    final public Suit suit;
-    final public Rank rank;
+import org.apache.commons.text.WordUtils;
 
-    public Card(final Suit suit, final Rank rank) {
-        this.suit = suit;
+public class Card {
+    final public Rank rank;
+    final public Suit suit;
+
+    public Card(final Rank rank, final Suit suit) {
         this.rank = rank;
+        this.suit = suit;
     }
 
     @Override
     public String toString() {
-        return "(Suit:" + this.suit + ";Rank:" + this.rank + ")";
+        return WordUtils.capitalizeFully(this.rank.name())
+                + " of "
+                + WordUtils.capitalizeFully(this.suit.name()) + "s";
     }
 }

@@ -1,4 +1,4 @@
-package practice;
+package analyze;
 
 import action.PlayerAction;
 
@@ -17,8 +17,8 @@ public class PlayerActionAnalyzerResult {
 
     @Override
     public String toString() {
-        return "(ExpectedAction:" + this.expectedAction
+        return "ExpectedAction:" + this.expectedAction
                 + ";ActualAction:" + this.actualAction
-                + ";Description:" + this.description + ")";
+                + ";Description:" + this.description;
     }
 }
