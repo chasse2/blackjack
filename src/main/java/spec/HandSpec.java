@@ -28,18 +28,25 @@ public class HandSpec {
     }
 
     @Override
-    public int hashCode() {
+    public final int hashCode() {
         //todo - does this make sense?
-        return playerCardValue1.value
-                + (10 + playerCardValue2.value)
-                + (100 + dealerCardValue.value);
+        return 1 * playerCardValue1.ordinal()
+                + 10 * playerCardValue2.ordinal()
+                + 100 * dealerCardValue.ordinal();
     }
 
     @Override
-    public boolean equals(Object obj) {
+    public final boolean equals(Object obj) {
         final HandSpec other = HandSpec.class.cast(obj);
         return this.playerCardValue1 == other.playerCardValue1
                 && this.playerCardValue2 == other.playerCardValue2
                 && this.dealerCardValue == other.dealerCardValue;
+    }
+
+    @Override
+    public String toString() {
+        return "PlayerCard1:" + playerCardValue1.toString()
+                + ";PlayerCard2:" + playerCardValue2.toString()
+                + ";DealerCard:" + dealerCardValue.toString();
     }
 }

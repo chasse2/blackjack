@@ -17,7 +17,6 @@ public class MultipleDeckGenerator {
         return cards;
     }
 
-
     private List<Card> generateDeck() {
         final List<Card> cards = new LinkedList<>();
         cards.addAll(generateSuit(Suit.CLUB));

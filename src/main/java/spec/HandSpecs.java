@@ -16,7 +16,9 @@ public class HandSpecs {
                     continue;
                 }
                 for (CardValue dealerCard : CardValue.values()) {
-                    all.add(new HandSpec(playerCard1, playerCard2, dealerCard));
+                    final HandSpec handSpec = new HandSpec(playerCard1, playerCard2, dealerCard);
+                    all.add(handSpec);
+                    System.out.println(handSpec.hashCode() + " " +  handSpec.toString());
                 }
             }
         }

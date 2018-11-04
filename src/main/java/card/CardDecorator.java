@@ -4,6 +4,7 @@ import generate.RandomRank10Generator;
 import generate.RandomSuitGenerator;
 
 public class CardDecorator {
+    //Todo - dependency injection
     private final RandomSuitGenerator randomSuitGenerator = new RandomSuitGenerator();
     private final RandomRank10Generator randomRank10Generator = new RandomRank10Generator();
 
