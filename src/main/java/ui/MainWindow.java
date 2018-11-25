@@ -1,20 +1,17 @@
 package ui;
 
-import com.sun.javafx.stage.WindowCloseRequestHandler;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import mode.Mode;
+import ui.scene.GameScene;
+import ui.scene.PracticeScene;
+import ui.scene.SelectPracticeOrGameScene;
 
-public class Main extends Application {
+public class MainWindow extends Application {
     Stage window;
-    Scene practiceScene;
-    Scene gameScene;
 
     Button practiceSwitchSceneButton;
     Button hitButton;
@@ -34,6 +31,12 @@ public class Main extends Application {
         window = primaryStage;
         window.setTitle("Blackjack");
 
+        final SelectPracticeOrGameScene selectPracticeOrGameScene = new SelectPracticeOrGameScene(this::applyGameMode);
+
+        window.setScene(selectPracticeOrGameScene.scene);
+        window.show(); // There is also a showAndWait()
+        window.setOnCloseRequest((final WindowEvent e) -> this.closeWindow());
+        /*
         Label practiceSceneLabel = new Label("Welcome to Practice Scene");
 
         practiceSwitchSceneButton = new Button();
@@ -52,7 +55,6 @@ public class Main extends Application {
             System.out.println("Stand action event handler");
         });
 
-//        FlowPane layout = new FlowPane();
         VBox practiceLayout = new VBox(3);  // # Pixels between each ...
         practiceLayout.getChildren().add(practiceSceneLabel);
         practiceLayout.getChildren().add(practiceSwitchSceneButton);
@@ -64,7 +66,6 @@ public class Main extends Application {
         window.show(); // There is also a showAndWait()
         window.setOnCloseRequest((final WindowEvent e) -> this.closeWindow());
 
-
         gameSwitchSceneButton = new Button("Switch to Practice");
         gameSwitchSceneButton.setOnAction(e -> window.setScene(practiceScene));
         fooButton = new Button("Foo");
@@ -75,9 +76,20 @@ public class Main extends Application {
         gameLayout.getChildren().addAll(gameSwitchSceneButton, fooButton, barButton);
 
         gameScene = new Scene(gameLayout, 300, 250);
+*/
     }
 
     private void closeWindow() {
         System.out.println("Cleanup before close ...");
+    }
+
+    void applyGameMode(final Mode mode) {
+        System.out.println("Mode: " + mode);
+
+        final Scene scene = (mode == Mode.PRACTICE)
+                ? new PracticeScene().scene
+                : new GameScene().scene;
+
+        window.setScene(scene);
     }
 }

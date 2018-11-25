@@ -1,9 +1,9 @@
 import org.junit.Test;
-import ui.Main;
+import ui.MainWindow;
 
 public class Bar {
     @Test
     public final void testMain() {
-        Main.main(new String[] {});
+        MainWindow.main(new String[] {});
     }
 }
