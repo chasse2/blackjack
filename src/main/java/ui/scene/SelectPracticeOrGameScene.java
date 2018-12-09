@@ -5,7 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
-import mode.Mode;
+import mode.GameMode;
 import ui.action.ApplyGameMode;
 
 public class SelectPracticeOrGameScene {
@@ -26,10 +26,10 @@ public class SelectPracticeOrGameScene {
         final Label label = new Label("I want to ...");
 
         final Button practiceButton = new Button("Practice");
-        practiceButton.setOnAction(e -> this.applyGameMode.apply(Mode.PRACTICE));
+        practiceButton.setOnAction(e -> this.applyGameMode.apply(GameMode.PRACTICE));
 
         final Button playGameButton = new Button("Play Game");
-        playGameButton.setOnAction(e -> this.applyGameMode.apply(Mode.PLAY_GAME));
+        playGameButton.setOnAction(e -> this.applyGameMode.apply(GameMode.PLAY_GAME));
 
         layout.getChildren().addAll(label, practiceButton, playGameButton);
     }

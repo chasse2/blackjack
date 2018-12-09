@@ -2,18 +2,18 @@ package spec.test;
 
 import card.CardValue;
 import org.junit.Test;
-import spec.HandSpec;
-import spec.HandSpecs;
+import spec.PracticeHandSpec;
+import spec.PracticeHandSpecs;
 
 import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
 
-public class HandSpecsTest {
+public class PracticePracticeHandSpecsTest {
 
     @Test
     public final void testAll() {
-        final Set<HandSpec> actualHandSpecs = HandSpecs.all;
+        final Set<PracticeHandSpec> actualHandSpecs = PracticeHandSpecs.all;
 
         final int NUM_CARD_VALUES = CardValue.values().length;
         final int EXPECTED_NUMBER_OF_CARD_SPECS = NUM_CARD_VALUES * NUM_CARD_VALUES * (NUM_CARD_VALUES + 1) / 2;

@@ -1,6 +1,6 @@
 package mode;
 
-public enum Mode {
+public enum GameMode {
     PRACTICE,
     PLAY_GAME
 }

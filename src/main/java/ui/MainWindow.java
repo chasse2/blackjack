@@ -5,7 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import mode.Mode;
+import mode.GameMode;
 import ui.scene.GameScene;
 import ui.scene.PracticeScene;
 import ui.scene.SelectPracticeOrGameScene;
@@ -83,10 +83,10 @@ public class MainWindow extends Application {
         System.out.println("Cleanup before close ...");
     }
 
-    void applyGameMode(final Mode mode) {
-        System.out.println("Mode: " + mode);
+    void applyGameMode(final GameMode gameMode) {
+        System.out.println("GameMode: " + gameMode);
 
-        final Scene scene = (mode == Mode.PRACTICE)
+        final Scene scene = (gameMode == GameMode.PRACTICE)
                 ? new PracticeScene().scene
                 : new GameScene().scene;
 

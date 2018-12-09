@@ -2,14 +2,14 @@ package spec;
 
 import card.CardValue;
 
-public class HandSpec {
+public class PracticeHandSpec {
     public CardValue playerCardValue1;
     public CardValue playerCardValue2;
     public CardValue dealerCardValue;
 
-    public HandSpec(final CardValue playerCardValue1,
-                    final CardValue playerCardValue2,
-                    final CardValue dealerCardValue) {
+    public PracticeHandSpec(final CardValue playerCardValue1,
+                            final CardValue playerCardValue2,
+                            final CardValue dealerCardValue) {
         this.playerCardValue1 = playerCardValue1;
         this.playerCardValue2 = playerCardValue2;
         this.dealerCardValue = dealerCardValue;
@@ -37,7 +37,7 @@ public class HandSpec {
 
     @Override
     public final boolean equals(Object obj) {
-        final HandSpec other = HandSpec.class.cast(obj);
+        final PracticeHandSpec other = PracticeHandSpec.class.cast(obj);
         return this.playerCardValue1 == other.playerCardValue1
                 && this.playerCardValue2 == other.playerCardValue2
                 && this.dealerCardValue == other.dealerCardValue;

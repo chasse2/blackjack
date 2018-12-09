@@ -5,8 +5,8 @@ import card.CardValue;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-public class HandSpecs {
-    public static final Set<HandSpec> all = new LinkedHashSet<>();
+public class PracticeHandSpecs {
+    public static final Set<PracticeHandSpec> all = new LinkedHashSet<>();
 
     static {
         for (CardValue playerCard1 : CardValue.values()) {
@@ -16,7 +16,7 @@ public class HandSpecs {
                     continue;
                 }
                 for (CardValue dealerCard : CardValue.values()) {
-                    final HandSpec handSpec = new HandSpec(playerCard1, playerCard2, dealerCard);
+                    final PracticeHandSpec handSpec = new PracticeHandSpec(playerCard1, playerCard2, dealerCard);
                     all.add(handSpec);
                     System.out.println(handSpec.hashCode() + " " +  handSpec.toString());
                 }

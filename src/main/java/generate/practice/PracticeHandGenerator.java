@@ -1,4 +1,6 @@
-package practice;
+package generate.practice;
+
+import hand.PracticeHand;
 
 public interface PracticeHandGenerator {
     public PracticeHand next();

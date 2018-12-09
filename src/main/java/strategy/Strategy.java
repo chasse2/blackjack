@@ -1,7 +1,7 @@
 package strategy;
 
-import spec.HandSpec;
+import spec.PracticeHandSpec;
 
 public interface Strategy {
-    public StrategyResult get(final HandSpec spec);
+    public StrategyResult get(final PracticeHandSpec spec);
 }

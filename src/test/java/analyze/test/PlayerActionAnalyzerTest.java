@@ -4,27 +4,18 @@ import action.PlayerAction;
 import analyze.PlayerActionAnalyzer;
 import analyze.PlayerActionAnalyzerResult;
 import card.Card;
-import card.CardValue;
 import card.Rank;
 import card.Suit;
 import org.junit.Test;
-import org.mockito.internal.matchers.Any;
 import org.springframework.test.util.ReflectionTestUtils;
-import practice.PracticeHand;
-import spec.HandSpec;
+import hand.PracticeHand;
 import strategy.Strategy;
-import strategy.StrategyResult;
 import strategy.VegasStrategy;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.description;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 public class PlayerActionAnalyzerTest {
     @Test

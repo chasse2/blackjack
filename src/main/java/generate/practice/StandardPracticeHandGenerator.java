@@ -1,6 +1,8 @@
-package practice;
+package generate.practice;
 
-import spec.HandSpec;
+import hand.PracticeHand;
+import hand.PracticeHandDecorator;
+import spec.PracticeHandSpec;
 
 import java.util.Iterator;
 import java.util.LinkedHashSet;
@@ -9,17 +11,17 @@ import java.util.Set;
 public class StandardPracticeHandGenerator implements PracticeHandGenerator {
     private final PracticeHandDecorator decorator = new PracticeHandDecorator();
 
-    private final Set<HandSpec> specs = new LinkedHashSet<>();
-    private final Set<HandSpec> specsWithDealerAce = new LinkedHashSet<>();
-    private final Set<HandSpec> specsWithPlayerAce = new LinkedHashSet<>();
-    private final Set<HandSpec> specsWithPlayerPair = new LinkedHashSet<>();
+    private final Set<PracticeHandSpec> specs = new LinkedHashSet<>();
+    private final Set<PracticeHandSpec> specsWithDealerAce = new LinkedHashSet<>();
+    private final Set<PracticeHandSpec> specsWithPlayerAce = new LinkedHashSet<>();
+    private final Set<PracticeHandSpec> specsWithPlayerPair = new LinkedHashSet<>();
 
-    volatile private Iterator<HandSpec> specIterator;
-    volatile private Iterator<HandSpec> specsWithDealAceIterator;
-    volatile private Iterator<HandSpec> specsWithPlayerAceIterator;
-    volatile private Iterator<HandSpec> specsWithPlayerPairIterator;
+    volatile private Iterator<PracticeHandSpec> specIterator;
+    volatile private Iterator<PracticeHandSpec> specsWithDealAceIterator;
+    volatile private Iterator<PracticeHandSpec> specsWithPlayerAceIterator;
+    volatile private Iterator<PracticeHandSpec> specsWithPlayerPairIterator;
 
-    public StandardPracticeHandGenerator(final Set<HandSpec> specs) {
+    public StandardPracticeHandGenerator(final Set<PracticeHandSpec> specs) {
         this.specs.addAll(specs);
         this.initializePracticeHands();
         this.specIterator = this.specs.iterator();

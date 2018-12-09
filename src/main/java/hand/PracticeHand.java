@@ -1,15 +1,15 @@
-package practice;
+package hand;
 
 import card.Card;
-import spec.HandSpec;
+import spec.PracticeHandSpec;
 
 public class PracticeHand {
     public final Card playerCard1;
     public final Card playerCard2;
     public final Card dealerCard;
 
-    public static HandSpec specOf(final PracticeHand practiceHand) {
-        return new HandSpec(
+    public static PracticeHandSpec specOf(final PracticeHand practiceHand) {
+        return new PracticeHandSpec(
                 practiceHand.playerCard1.rank.cardValue,
                 practiceHand.playerCard2.rank.cardValue,
                 practiceHand.dealerCard.rank.cardValue);
