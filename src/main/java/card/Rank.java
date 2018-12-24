@@ -1,5 +1,8 @@
 package card;
 
+/**
+ * Playing card ranks.
+ */
 public enum Rank {
         ACE(CardValue.ACE),
         TWO(CardValue.TWO),

@@ -4,6 +4,9 @@ import card.Suit;
 
 import java.util.Random;
 
+/**
+ * Randomly generates {@link Suit}'s.
+ */
 public class RandomSuitGenerator {
     private final Random random = new Random();
 

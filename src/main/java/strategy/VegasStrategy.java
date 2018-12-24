@@ -7,6 +7,9 @@ import spec.PracticeHandSpec;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * A {@link Strategy} based on Vegas rules.
+ */
 public class VegasStrategy implements Strategy {
     private static final Map<PracticeHandSpec, StrategyResult> strategyMap = new HashMap<>();
 
@@ -21,8 +24,14 @@ public class VegasStrategy implements Strategy {
                 new StrategyResult(PlayerAction.SPLIT, "todoDescription for 2, 2, 6"));
     }
 
+    /**
+     * Determine the expected play for a {@link PracticeHandSpec}.
+     * @param spec - A specification for a practice hand.
+     * @return
+     * a {@link StrategyResult} representing the expected play.
+     */
     @Override
-    public final StrategyResult get(final PracticeHandSpec spec) {
+    public final StrategyResult determineExpected(final PracticeHandSpec spec) {
         return this.strategyMap.get(spec);
     }
 }

@@ -4,6 +4,9 @@ import card.Rank;
 
 import java.util.Random;
 
+/**
+ * Randomly generate {@link Rank}'s with a {@link card.CardValue} of 10.
+ */
 public class RandomRank10Generator {
     private final Random random = new Random();
 

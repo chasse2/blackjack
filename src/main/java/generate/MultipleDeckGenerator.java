@@ -7,8 +7,17 @@ import card.Suit;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Generate decks of {@link Card}'s.
+ */
 //todo : For eventual actual blackjack game (not practice level)
 public class MultipleDeckGenerator {
+    /**
+     * Generate deck(s) of {@link Card}'s.
+     * @param numDecks - the number of decks
+     * @return
+     * a {@link List} of {@link Card}'s representing the number of decks.
+     */
     public final List<Card> generate(final int numDecks) {
         final List<Card> cards = new LinkedList<>();
         for (int i = 0; i < numDecks; ++i) {

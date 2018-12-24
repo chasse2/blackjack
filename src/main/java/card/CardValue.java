@@ -1,5 +1,8 @@
 package card;
 
+/**
+ * The value of a playing card.
+ */
 public enum  CardValue {
     ACE(1, 11),
     TWO(2),
@@ -18,6 +21,10 @@ public enum  CardValue {
 
     public final boolean isSingleValue;
 
+    /**
+     * Constructs a {@link CardValue} representing a numeric.
+     * @param value
+     */
     CardValue(final int value) {
         this.value = value;
         this.lowValue = value;
@@ -25,6 +32,12 @@ public enum  CardValue {
         this.isSingleValue = true;
     }
 
+    /**
+     * Constructs a {@link CardValue} representing two numerics: a low value and a high value.
+     * E.g. an {@code Ace} with a low value of 1 and a high value of 11.
+     * @param lowValue
+     * @param highValue
+     */
     CardValue(final int lowValue, final int highValue) {
         this.value = lowValue;
         this.lowValue = lowValue;

@@ -5,6 +5,9 @@ import card.CardValue;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+/**
+ * Contains all possible mutations of {@link PracticeHandSpec}'s.
+ */
 public class PracticeHandSpecs {
     public static final Set<PracticeHandSpec> all = new LinkedHashSet<>();
 

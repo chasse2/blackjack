@@ -1,7 +1,10 @@
 package rules;
 
+/**
+ * The rules of a game.
+ */
 public interface Rules {
-    public int numberOfDecks();
+    int numberOfDecks();
 
-    public boolean dealerHitsOnSoftSeventeen(); // False for Atlantic City and Vegas
+    boolean dealerHitsOnSoftSeventeen(); // False for Atlantic City and Vegas
 }
