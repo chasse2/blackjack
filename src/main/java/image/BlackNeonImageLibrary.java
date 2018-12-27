@@ -9,10 +9,9 @@ import java.util.HashMap;
 /**
  * An image library for card fronts and backs as supplied by the American Contract Bridge League.
  */
-public class BridgeLeagueImageLibrary implements ImageLibrary {
-
-    private String root = "file:///Users/eenglish/Downloads/Playing-Card-Images/JPEG/";
-    private String extension = ".jpg";
+public class BlackNeonImageLibrary implements ImageLibrary {
+    private String root = "file:///Users/eenglish/Downloads/Playing-Card-Images-NEON/";
+    private String extension = ".png";
 
     private final HashMap<CardBackImage, ImageView> cardBackImages = new HashMap<>(CardBackImage.values().length);
     private final HashMap<Card, ImageView> cardFrontImages = new HashMap<>(Deck.CARDS_PER_DECK);
@@ -49,7 +48,7 @@ public class BridgeLeagueImageLibrary implements ImageLibrary {
     }
 
     private ImageView fetchCardBackImage(final CardBackImage cardBackImage) {
-        final String url = root + "blue_back" + extension;
+        final String url = root + "Playing-Card-Back-Green.jpg";// + extension;
         return this.fetcher.fetch(url, this.size);
     }
 

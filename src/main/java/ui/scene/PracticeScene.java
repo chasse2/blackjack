@@ -3,8 +3,10 @@ package ui.scene;
 import card.Card;
 import card.Rank;
 import card.Suit;
+import image.BlackNeonImageLibrary;
 import image.BridgeLeagueImageLibrary;
 import image.ImageLibrary;
+import image.StandardImageLibrary;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -25,7 +27,9 @@ public class PracticeScene {
 
     public final Scene scene;
 
-    private ImageLibrary imageLibrary = new BridgeLeagueImageLibrary();
+//    private ImageLibrary imageLibrary = new BridgeLeagueImageLibrary();
+    private ImageLibrary imageLibrary = new StandardImageLibrary();
+//    private ImageLibrary imageLibrary = new BlackNeonImageLibrary();
 
     public PracticeScene() {
         final GridPane layout = new GridPane();
@@ -43,19 +47,22 @@ public class PracticeScene {
 
         final ImageView dealerCardVisible = imageLibrary.checkoutCardFront(new Card(Rank.ACE, Suit.CLUB));
         GridPane.setConstraints(dealerCardVisible, 0, 1, 1, 2);
+//        GridPane.setVgrow(dealerCardVisible, Priority.ALWAYS);
 
         final ImageView dealerCardHole = imageLibrary.checkoutCardBack();
         GridPane.setConstraints(dealerCardHole, 1, 1, 1, 2);
-
+//        GridPane.setVgrow(dealerCardHole, Priority.ALWAYS);
 
 //        final Label dealerCardsPlaceHolder = new Label("Dealer Cards Placeholder");
 //        GridPane.setConstraints(dealerCardsPlaceHolder, 0, 1, 2, 2);
 
         final ImageView playerCard1 = imageLibrary.checkoutCardFront(new Card(Rank.THREE, Suit.HEART));
         GridPane.setConstraints(playerCard1, 0, 3, 1, 2);
+//        GridPane.setVgrow(playerCard1, Priority.ALWAYS);
 
         final ImageView playerCard2 = imageLibrary.checkoutCardFront(new Card(Rank.EIGHT, Suit.SPADE));
         GridPane.setConstraints(playerCard2, 1, 3, 1, 2);
+//        GridPane.setVgrow(playerCard2, Priority.ALWAYS);
 
 //        final Label playerCardPlaceholder1 = new Label("Player Card PlaceHolder 1");
 //        GridPane.setConstraints(playerCardPlaceholder1, 0, 3, 1, 2);

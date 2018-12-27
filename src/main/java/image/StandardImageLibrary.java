@@ -9,15 +9,15 @@ import java.util.HashMap;
 /**
  * An image library for card fronts and backs as supplied by the American Contract Bridge League.
  */
-public class BridgeLeagueImageLibrary implements ImageLibrary {
+public class StandardImageLibrary implements ImageLibrary {
 
-    private String root = "file:///Users/eenglish/Downloads/Playing-Card-Images/JPEG/";
-    private String extension = ".jpg";
+    private String root = "file:///Users/eenglish/Downloads/Playing-Card-Images/Playing Cards/PNG-cards-1.3/";
+    private String extension = ".png";
 
     private final HashMap<CardBackImage, ImageView> cardBackImages = new HashMap<>(CardBackImage.values().length);
     private final HashMap<Card, ImageView> cardFrontImages = new HashMap<>(Deck.CARDS_PER_DECK);
     private final ImageFetcher fetcher = new ImageFetcher();
-    private final ImageSize size = new ImageSize(100, 153);
+    private final ImageSize size = new ImageSize(100, 145);
 
     /**
      * Checkout the default card back.
@@ -59,14 +59,14 @@ public class BridgeLeagueImageLibrary implements ImageLibrary {
     }
 
     private String generateUrl(final Card card) {
-        return root + generateRankString(card) + generateSuitString(card) + extension;
+        return root + generateRankString(card) + "_of_" + generateSuitString(card) + extension;
     }
 
     private String generateRankString(final Card card) {
         final String rankString;
 
         if (card.rank.isFaceCardOrAce()) {
-            rankString = card.rank.name().substring(0, 1);
+            rankString = card.rank.name().toLowerCase();
         } else {
             rankString = Integer.toString(card.rank.cardValue.value);
         }
@@ -75,6 +75,6 @@ public class BridgeLeagueImageLibrary implements ImageLibrary {
     }
 
     private String generateSuitString(final Card card) {
-        return card.suit.name().substring(0, 1);
+        return card.suit.name().toLowerCase() + "s";
     }
 }
