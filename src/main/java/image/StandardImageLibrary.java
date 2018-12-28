@@ -18,6 +18,7 @@ public class StandardImageLibrary implements ImageLibrary {
     private final HashMap<Card, ImageView> cardFrontImages = new HashMap<>(Deck.CARDS_PER_DECK);
     private final ImageFetcher fetcher = new ImageFetcher();
     private final ImageSize size = new ImageSize(100, 145);
+//    private final ImageSize size = new ImageSize(200, 290);
 
     /**
      * Checkout the default card back.
